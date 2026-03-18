@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artigos & Insights — Poker Fora da Caixa</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Artigos e insights sobre tomada de decisão, liderança, gestão de risco e comportamento humano com base na metodologia do poker corporativo.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pokerforadacaixa.com.br/artigos.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Artigos & Insights — Poker Fora da Caixa">
+  <meta property="og:description" content="Leituras sobre tomada de decisão, liderança e gestão de risco com base na metodologia do poker corporativo.">
+  <meta property="og:url" content="https://pokerforadacaixa.com.br/artigos.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Poker Fora da Caixa">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0F0F0F;
+      --surface: #1A1A1A;
+      --surface2: #222222;
+      --border: rgba(255,255,255,0.08);
+      --primary: #B8E600;
+      --primary-dark: #9CC400;
+      --muted: #8A8A8A;
+      --text: #F0F0F0;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(12,12,12,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; }
+    .nav-brand-name { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.2; }
+    .nav-brand-sub { display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--primary); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: var(--primary); }
+    .btn-nav {
+      background: var(--primary); color: #0F0F0F;
+      font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13px;
+      border: none; border-radius: 8px; padding: 10px 22px; cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+      text-decoration: none; display: inline-flex; align-items: center;
+    }
+    .btn-nav:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(184,230,0,0.3); }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      padding: 140px 0 64px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(184,230,0,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 80% 30%, rgba(184,230,0,0.03) 0%, transparent 60%);
+    }
+    .page-hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(184,230,0,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,230,0,0.018) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 20%, transparent 100%);
+    }
+
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 48px; }
+
+    .page-hero .wrap { position: relative; z-index: 2; }
+
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(184,230,0,0.08); border: 1px solid rgba(184,230,0,0.2);
+      border-radius: 100px; padding: 5px 16px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--primary); margin-bottom: 20px;
+      animation: fadeUp 0.6s 0.1s both;
+    }
+    .page-h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900; letter-spacing: -0.04em; line-height: 0.95;
+      margin-bottom: 16px;
+      animation: fadeUp 0.6s 0.2s both;
+    }
+    .page-h1 span { color: var(--primary); }
+    .page-lead {
+      font-size: 16px; color: var(--muted); line-height: 1.75;
+      max-width: 500px;
+      animation: fadeUp 0.6s 0.3s both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── TAG PILL ─── */
+    .tag-pill {
+      display: inline-flex; align-items: center;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 100px;
+      background: rgba(184,230,0,0.12); color: var(--primary);
+      border: 1px solid rgba(184,230,0,0.2);
+    }
+    .tag-pill.red { background: rgba(200,16,46,0.12); color: #E8607A; border-color: rgba(200,16,46,0.2); }
+    .tag-pill.blue { background: rgba(60,120,220,0.12); color: #7EB4F0; border-color: rgba(60,120,220,0.2); }
+    .tag-pill.purple { background: rgba(140,80,220,0.12); color: #C080F0; border-color: rgba(140,80,220,0.2); }
+
+    /* ─── FEATURED ARTICLE ─── */
+    .featured-article {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      margin-bottom: 48px;
+    }
+    .featured-article:hover {
+      border-color: rgba(184,230,0,0.25);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(184,230,0,0.08);
+    }
+    .featured-img {
+      position: relative; overflow: hidden;
+    }
+    .featured-img-placeholder {
+      width: 100%; height: 100%; min-height: 400px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #111 50%, #1a1a1a 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 120px; opacity: 0.15;
+      position: relative;
+    }
+    .featured-img-placeholder::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 60%, var(--surface) 100%);
+    }
+    .featured-content {
+      padding: 48px 48px 48px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .featured-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #0F0F0F; background: var(--primary);
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 20px; width: fit-content;
+    }
+    .featured-title {
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1.15;
+      margin-bottom: 14px;
+      transition: color 0.2s;
+    }
+    .featured-article:hover .featured-title { color: var(--primary); }
+    .featured-excerpt {
+      font-size: 14px; color: var(--muted); line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .article-meta {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 12px; color: var(--muted);
+    }
+    .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); flex-shrink: 0; }
+    .read-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 700; color: var(--primary);
+      margin-top: 24px;
+      transition: gap 0.2s;
+    }
+    .read-link:hover { gap: 12px; }
+    .read-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ─── ARTICLES GRID ─── */
+    .section-label {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 28px;
+    }
+    .section-label-text {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .section-label-line {
+      flex: 1; height: 1px; background: var(--border);
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .article-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .article-card:hover {
+      border-color: rgba(184,230,0,0.22);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(184,230,0,0.06);
+    }
+    .card-img-wrap {
+      height: 180px; overflow: hidden;
+      background: var(--surface2);
+      position: relative;
+    }
+    .card-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 64px; opacity: 0.12;
+      background: linear-gradient(135deg, #1e1e1e 0%, #141414 100%);
+    }
+    .card-body { padding: 24px 24px 28px; display: flex; flex-direction: column; flex: 1; }
+    .card-tags { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+    .card-title {
+      font-size: 17px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.3;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .article-card:hover .card-title { color: var(--primary); }
+    .card-excerpt {
+      font-size: 13px; color: var(--muted); line-height: 1.7;
+      margin-bottom: 20px; flex: 1;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 16px; border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--muted);
+    }
+    .card-read-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 700; color: var(--primary);
+      transition: gap 0.2s;
+    }
+    .card-read-link:hover { gap: 10px; }
+    .card-read-link svg { width: 14px; height: 14px; }
+
+    /* ─── EMPTY STATE ─── */
+    .empty-state {
+      text-align: center; padding: 80px 20px;
+      border: 1px dashed var(--border); border-radius: 16px;
+      margin-top: 20px;
+    }
+    .empty-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+    .empty-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .empty-body { font-size: 14px; color: var(--muted); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080808; border-top: 1px solid var(--border);
+      padding: 32px 48px; margin-top: 96px;
+    }
+    .foot-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .foot-brand { display: flex; align-items: center; gap: 10px; }
+    .foot-brand-name { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.5); }
+    .foot-copy { font-size: 12px; color: #333; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      #nav { padding: 14px 20px; }
+      .nav-links a.hide-md { display: none; }
+      .wrap { padding: 0 20px; }
+      .featured-article { grid-template-columns: 1fr; }
+      .featured-img { display: none; }
+      .featured-content { padding: 32px 28px; }
+      .articles-grid { grid-template-columns: 1fr 1fr; }
+      footer { padding: 24px 20px; }
+      .foot-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+    @media (max-width: 600px) {
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="nav">
+    <a href="index.html" class="nav-brand" style="text-decoration:none;">
+      <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(184,230,0,0.4);">
+        <img src="logo-transparent.png" alt="Poker Fora da Caixa Logo" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div>
+        <span class="nav-brand-name">Poker Fora da Caixa</span>
+        <span class="nav-brand-sub">Palestras e Workshops</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#sobre" class="hide-md">Sobre</a>
+      <a href="index.html#servicos" class="hide-md">Serviços</a>
+      <a href="index.html#equipe" class="hide-md">Equipe</a>
+      <a href="artigos.html" class="active">Artigos</a>
+      <a href="index.html#contato" class="btn-nav">Fale Conosco</a>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE HERO ─── -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="wrap">
+      <div class="page-eyebrow">✍️ Conteúdo</div>
+      <h1 class="page-h1">Artigos &<br><span>Insights</span></h1>
+      <p class="page-lead">Reflexões sobre poker, estratégia corporativa, tomada de decisão e liderança — escritas pela equipe do Poker Fora da Caixa.</p>
+    </div>
+  </div>
+
+  <!-- ─── CONTENT ─── -->
+  <div style="padding-bottom: 96px;">
+    <div class="wrap">
+
+      <!-- ARTIGO EM DESTAQUE -->
+      <!-- Cole aqui um bloco <a href="seu-artigo.html"> ... </a> com o featured-article quando publicar o primeiro artigo -->
+
+      <!-- LISTA DE ARTIGOS -->
+      <!-- INSTRUÇÃO: Para publicar um artigo: -->
+      <!-- 1) Duplique artigo-modelo.html e renomeie (ex: artigo-gestao-riscos.html) -->
+      <!-- 2) Edite o conteúdo no novo arquivo -->
+      <!-- 3) Adicione um card abaixo apontando para esse arquivo -->
+      <div class="articles-grid">
+
+        <!-- ADICIONE CARDS AQUI. Exemplo de card: -->
+        <!--
+        <a href="nome-do-artigo.html" style="display:contents;">
+          <div class="article-card">
+            <div class="card-img-wrap">
+              <div class="card-img-placeholder">🃏</div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags"><span class="tag-pill">Categoria</span></div>
+              <h3 class="card-title">Título do Artigo</h3>
+              <p class="card-excerpt">Resumo do artigo em 2-3 linhas.</p>
+              <div class="card-footer">
+                <span>Data · X min</span>
+                <span class="card-read-link">Ler <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </a>
+        -->
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="foot-inner">
+      <a href="index.html" class="foot-brand" style="text-decoration:none;">
+        <div style="width:28px;height:28px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1.5px solid rgba(184,230,0,0.35);">
+          <img src="logo-transparent.png" alt="Poker Fora da Caixa" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span class="foot-brand-name">Poker Fora da Caixa</span>
+      </a>
+      <span class="foot-copy">© 2026 Poker Fora da Caixa. Todos os direitos reservados.</span>
+      <span style="font-size:12px;color:#333;font-style:italic;">"Transforme suas decisões, jogue para ganhar!"</span>
+    </div>
+  </footer>
+
+</body>
+</html>

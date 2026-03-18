@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pokerforadacaixa.com.br/sitemap.xml

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(python -c \"from PIL import Image; print\\(''Pillow OK''\\)\")"
+    ]
+  }
+}
