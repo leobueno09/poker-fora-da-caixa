@@ -61,6 +61,7 @@
       color: var(--text);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
     }
 
     a[x-apple-data-detectors], a[href^="tel"], a[href^="sms"] {
@@ -98,6 +99,8 @@
       font-size: clamp(52px, 6vw, 84px);
       letter-spacing: 0.03em; line-height: 0.9;
       margin-bottom: 20px;
+      max-width: 100%;
+      word-break: break-word;
     }
     .h2 em { font-style: normal; color: var(--primary); }
 
@@ -495,30 +498,45 @@
       .nav-links .hide-md { display: none; }
       .wrap { padding: 0 20px; }
       .section { padding: 64px 0; }
+      .h2 { font-size: clamp(28px, 8vw, 52px); }
       .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-right { height: 55vw; max-height: 420px; order: -1; }
-      .hero-left { padding: 80px 20px 56px; }
+      .hero-right { height: 55vw; max-height: 380px; order: -1; }
+      .hero-left { padding: 48px 20px 56px; }
       .hero-scroll { display: none; }
       .stats-inner { padding: 0 20px; flex-direction: column; gap: 0; }
-      .stat-cell { border-right: none; border-bottom: 1px solid var(--border); padding: 20px; }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
       .stat-cell:last-child { border-bottom: none; }
+      .stat-num { font-size: 56px; }
       .phil-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 20px; }
       .phil-vline { display: none; }
       .philosophy { padding: 60px 0; }
-      .about-grid, .why-layout, .benefits-split, .contact-split { grid-template-columns: 1fr; gap: 40px; }
+      .about-grid, .why-layout, .benefits-split, .contact-split { grid-template-columns: 1fr; gap: 32px; }
       .svc-grid, .method-grid, .team-grid { grid-template-columns: 1fr; }
+      .svc-card { padding: 36px 24px; }
+      .svc-big-num { font-size: 88px; margin-bottom: -28px; }
+      .svc-title { font-size: 38px; }
       .svc-card + .svc-card, .method-cell + .method-cell, .team-card + .team-card { border-left: none; border-top: 1px solid var(--border); }
+      .method-cell { padding: 36px 24px; }
+      .team-card { padding: 32px 24px; }
+      .team-name { font-size: 26px; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-img { height: 180px; }
-      .photo-banner { height: 400px; }
+      .gallery-img { height: 160px; }
+      .photo-banner { height: 360px; }
       .photo-banner-overlay { padding: 0 24px; }
-      .yellow-cta { padding: 80px 20px; }
-      .benefits-photo { height: 320px; position: static; }
-      .why-photo { height: 320px; }
-      .why-stats { grid-template-columns: 1fr; }
-      .why-stat.wide { grid-column: span 1; }
+      .photo-banner-title { font-size: clamp(36px, 9vw, 64px); }
+      .yellow-cta { padding: 72px 20px; }
+      .yellow-cta-title { font-size: clamp(52px, 14vw, 96px); }
+      .benefits-photo { height: 280px; position: static; }
+      .why-photo { height: 280px; }
+      .why-stats { grid-template-columns: 1fr 1fr; background: transparent; gap: 12px; margin: 20px 0; }
+      .why-stat { border-radius: 8px; border: 1px solid var(--border); }
+      .why-stat + .why-stat { border-left: 1px solid var(--border); }
+      .why-stat.wide { grid-column: span 2; }
+      .contact-split { gap: 40px; }
       footer { padding: 24px 20px; }
       .foot-inner { flex-direction: column; align-items: flex-start; }
+      .pill { padding: 16px 18px; }
+      .ben-item { gap: 14px; padding: 20px 0; }
     }
   </style>
 </head>
@@ -1015,7 +1033,7 @@
       entries.forEach(el => {
         if (el.isIntersecting) { el.target.classList.add('revealed'); io.unobserve(el.target); }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
     revealEls.forEach(el => io.observe(el));
 
     // Stat counter
