@@ -147,6 +147,10 @@
     .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
     .wa-float svg { width: 30px; height: 30px; }
 
+    /* ─── HAMBURGER (desktop: hidden) ─── */
+    .hamburger { display: none; }
+    #mobile-menu { display: none !important; }
+
     /* ─── NAV ─── */
     #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -538,6 +542,51 @@
       .foot-inner { flex-direction: column; align-items: flex-start; }
       .pill { padding: 16px 18px; }
       .ben-item { gap: 14px; padding: 20px 0; }
+
+      .hamburger { display: flex; }
+
+      /* ─── HAMBURGER ─── */
+      .hamburger {
+        display: flex; flex-direction: column; justify-content: center; gap: 5px;
+        width: 40px; height: 40px; cursor: pointer; background: none; border: none;
+        padding: 4px; flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block; width: 24px; height: 2px;
+        background: #fff; border-radius: 2px;
+        transition: transform 0.25s, opacity 0.25s;
+        transform-origin: center;
+      }
+      .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      /* ─── MOBILE MENU DRAWER ─── */
+      #mobile-menu {
+        display: flex !important;
+        position: fixed; inset: 0; z-index: 199;
+        background: rgba(10,10,10,0.97);
+        backdrop-filter: blur(16px);
+        flex-direction: column; align-items: center; justify-content: center;
+        gap: 8px;
+        opacity: 0; pointer-events: none;
+        transition: opacity 0.25s;
+      }
+      #mobile-menu.open { opacity: 1; pointer-events: auto; }
+      #mobile-menu a {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 44px; letter-spacing: 0.05em;
+        color: #fff; text-decoration: none;
+        transition: color 0.2s;
+      }
+      #mobile-menu a:hover { color: var(--primary); }
+      #mobile-menu a.menu-cta {
+        font-family: 'Barlow', sans-serif;
+        font-size: 14px; font-weight: 800;
+        letter-spacing: 0.1em; text-transform: uppercase;
+        background: var(--primary); color: #0F0F0F;
+        padding: 14px 40px; margin-top: 16px;
+      }
     }
   </style>
 </head>
@@ -560,9 +609,22 @@
       <a href="#equipe" class="hide-md">Equipe</a>
       <a href="#clientes" class="hide-md">Clientes</a>
       <a href="artigos.html" class="hide-md">Artigos</a>
-      <a href="#contato" class="btn btn-lime" style="font-size:12px;padding:10px 24px;">Fale Conosco</a>
+      <a href="#contato" class="btn btn-lime hide-md" style="font-size:12px;padding:10px 24px;">Fale Conosco</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" role="dialog" aria-label="Menu de navegação">
+    <a href="#sobre"    id="mm-link">Sobre</a>
+    <a href="#servicos" id="mm-link">Serviços</a>
+    <a href="#equipe"   id="mm-link">Equipe</a>
+    <a href="#clientes" id="mm-link">Clientes</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="#contato" class="menu-cta">Fale Conosco</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -1022,6 +1084,18 @@
   </a>
 
   <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    function toggleMenu(open) {
+      hamburger.classList.toggle('open', open);
+      mobileMenu.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', () => toggleMenu(!hamburger.classList.contains('open')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
     // Nav
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
