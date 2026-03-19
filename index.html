@@ -499,9 +499,22 @@
       .wrap { padding: 0 20px; }
       .section { padding: 64px 0; }
       .h2 { font-size: clamp(28px, 8vw, 52px); }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-right { height: 55vw; max-height: 380px; order: -1; }
-      .hero-left { padding: 48px 20px 56px; }
+      .hero { display: block; position: relative; min-height: 100svh; }
+      .hero-right {
+        position: absolute; inset: 0;
+        height: 100%; max-height: none; order: 0;
+      }
+      .hero-right img { object-position: center 20%; }
+      .hero-right::after {
+        background:
+          linear-gradient(to top, var(--bg) 30%, rgba(15,15,15,0.7) 60%, rgba(15,15,15,0.25) 100%);
+      }
+      .hero-left {
+        position: absolute; bottom: 0; left: 0; right: 0;
+        padding: 0 24px 52px; justify-content: flex-end;
+        z-index: 2;
+      }
+      .hero-desc { display: none; }
       .hero-scroll { display: none; }
       .stats-inner { padding: 0 20px; flex-direction: column; gap: 0; }
       .stat-cell { border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
