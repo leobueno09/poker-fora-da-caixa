@@ -504,17 +504,19 @@
         position: absolute; inset: 0;
         height: 100%; max-height: none; order: 0;
       }
-      .hero-right img { object-position: center 20%; }
+      .hero-right img { object-position: center 15%; }
       .hero-right::after {
         background:
-          linear-gradient(to top, var(--bg) 30%, rgba(15,15,15,0.7) 60%, rgba(15,15,15,0.25) 100%);
+          linear-gradient(to top, rgba(15,15,15,1) 18%, rgba(15,15,15,0.55) 42%, rgba(15,15,15,0.15) 68%, transparent 100%),
+          linear-gradient(to bottom, rgba(15,15,15,0.6) 0%, transparent 20%);
       }
       .hero-left {
         position: absolute; bottom: 0; left: 0; right: 0;
-        padding: 0 24px 52px; justify-content: flex-end;
+        padding: 0 24px 48px; justify-content: flex-end;
         z-index: 2;
       }
       .hero-desc { display: none; }
+      .hero-tagline { margin-bottom: 20px; }
       .hero-scroll { display: none; }
       .stats-inner { padding: 0 20px; flex-direction: column; gap: 0; }
       .stat-cell { border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
