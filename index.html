@@ -193,7 +193,7 @@
       display: grid; grid-template-columns: 52% 48%;
       overflow: hidden;
     }
-.hero-left {
+    .hero-left {
       display: flex; flex-direction: column; justify-content: center;
       padding: 140px 64px 80px 52px;
       position: relative; z-index: 2;
@@ -421,20 +421,6 @@
     .benefits-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
     .benefits-callout { margin-top: 28px; padding: 18px 22px; background: rgba(184,230,0,0.07); border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0; font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; color: var(--primary); line-height: 1.55; }
 
-    /* ─── WHY US ─── */
-    .why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .why-photo { border-radius: 10px; overflow: hidden; height: 480px; }
-    .why-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 10%; }
-    .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--border); margin: 32px 0; }
-    .why-stat { background: var(--surface); padding: 28px 24px; text-align: center; }
-    .why-stat + .why-stat { border-left: 1px solid var(--border); }
-    .why-stat.wide { grid-column: span 2; border-left: none; border-top: 1px solid var(--border); background: rgba(184,230,0,0.03); }
-    .why-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: var(--primary); letter-spacing: 0.02em; line-height: 1; }
-    .why-stat-lbl { font-size: 11px; color: var(--muted); margin-top: 6px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .check-list { border-top: 1px solid var(--border); }
-    .check-item { display: flex; gap: 14px; align-items: flex-start; font-size: 14px; color: var(--muted); line-height: 1.65; padding: 14px 0; border-bottom: 1px solid var(--border); }
-    .check-item::before { content: '✓'; color: var(--primary); font-family: 'Barlow', sans-serif; font-weight: 800; flex-shrink: 0; }
-
     /* ─── YELLOW CTA ─── */
     .yellow-cta {
       background: var(--primary);
@@ -498,7 +484,6 @@
     .foot-logo img { width: 100%; height: 100%; object-fit: cover; }
     .foot-name { font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.35); }
     .foot-copy { font-size: 12px; color: #2a2a2a; }
-    .foot-slogan { font-size: 12px; color: #2a2a2a; font-style: italic; }
 
     /* ─── REVEAL ─── */
     .reveal { opacity: 0; transform: translateY(24px); }
@@ -522,7 +507,7 @@
       .phil-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 20px; }
       .phil-vline { display: none; }
       .philosophy { padding: 60px 0; }
-      .about-grid, .why-layout, .benefits-split, .contact-split { grid-template-columns: 1fr; gap: 32px; }
+      .about-grid, .benefits-split, .contact-split { grid-template-columns: 1fr; gap: 32px; }
       .svc-grid, .method-grid, .team-grid { grid-template-columns: 1fr; }
       .svc-card { padding: 36px 24px; }
       .svc-big-num { font-size: 88px; margin-bottom: -28px; }
@@ -540,11 +525,6 @@
       .yellow-cta-title { font-size: clamp(52px, 14vw, 96px); }
       .benefits-photo { display: none; }
       .benefits-callout { display: none; }
-      .why-photo { display: none; }
-      .why-stats { grid-template-columns: 1fr 1fr; background: transparent; gap: 12px; margin: 20px 0; }
-      .why-stat { border-radius: 8px; border: 1px solid var(--border); }
-      .why-stat + .why-stat { border-left: 1px solid var(--border); }
-      .why-stat.wide { grid-column: span 2; }
       .contact-split { gap: 40px; }
       footer { padding: 24px 20px; }
       .foot-inner { flex-direction: column; align-items: flex-start; }
@@ -643,14 +623,13 @@
         </div>
       </div>
       <h1 class="hero-h1">
-        POKER
-        <em>FORA DA CAIXA</em>
+        NUMA MÃO DE POKER,<br>UMA DECISÃO ERRADA
+        <em>CUSTA MUITO.</em>
+        NA SUA EMPRESA,
+        <em>TAMBÉM.</em>
       </h1>
-      <p class="hero-tagline">"Transforme suas decisões,<br>jogue para ganhar!"</p>
       <p class="hero-desc">
-        Levamos as habilidades do poker para o mundo corporativo, desenvolvendo
-        <strong style="color:#fff;font-weight:500;">estratégia, tomada de decisão</strong> e
-        <strong style="color:#fff;font-weight:500;">gestão de riscos</strong> de forma lúdica e interativa.
+        Palestras e workshops onde sua equipe não ouve sobre tomada de decisão: ela pratica, erra e aprende.
       </p>
       <div class="hero-ctas">
         <a href="https://wa.me/5511975301170?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20palestras%20e%20workshops%20do%20Poker%20Fora%20da%20Caixa." target="_blank" rel="noopener" class="btn btn-lime">
@@ -690,12 +669,15 @@
   <div class="philosophy">
     <div class="phil-inner reveal">
       <div class="phil-quote">
-        HABILIDADES QUE<br><em>O JOGO REVELA</em>
+        O QUE SÓ<br><em>O JOGO ENSINA</em>
       </div>
       <div class="phil-vline"></div>
       <div>
         <p class="phil-body">
-          Lógica, psicologia, controle emocional, leitura de pessoas, análise de risco e estratégia — desenvolvidas através de dinâmicas inspiradas no poker, de forma viva e prática.
+          Em quase 20 anos de poker profissional, aprendemos uma coisa que nenhum treinamento convencional ensina: você só desenvolve uma habilidade quando está sob pressão para usá-la.
+        </p>
+        <p class="phil-body" style="margin-top:14px;">
+          É por isso que nas nossas sessões, a sala joga. Erra. Decide. E entende, na prática, por que tomou a decisão que tomou.
         </p>
         <a href="#sobre" class="btn btn-lime" style="margin-top:28px;font-size:12px;padding:12px 28px;">Conheça a Metodologia</a>
       </div>
@@ -710,10 +692,13 @@
           <div class="lbl-row"><span class="lbl">Sobre nós</span></div>
           <h2 class="h2">POR QUE POKER<br><em>FORA DA CAIXA?</em></h2>
           <p class="lead">
-            Usamos dinâmicas inspiradas no poker para desenvolver habilidades que realmente importam: <strong style="color:#fff;font-weight:500;">lógica, psicologia, controle emocional</strong> e tomada de decisão sob pressão.
+            A maioria das palestras corporativas entrega conteúdo. As pessoas ouvem, anotam, e voltam para a mesa fazendo exatamente o que faziam antes.
           </p>
           <p class="lead" style="margin-top:14px;">
-            Ao longo de quase 20 anos, nosso time de especialistas tem impactado empresas de renome com <strong style="color:#fff;font-weight:500;">dinâmicas que vão além do jogo.</strong>
+            Nós fazemos diferente. Em vez de explicar como tomar decisões sob pressão, colocamos sua equipe numa situação onde ela precisa tomar decisões sob pressão, agora, com consequências dentro do jogo.
+          </p>
+          <p class="lead" style="margin-top:14px;">
+            O que muda não é o que as pessoas sabem. É o que elas passam a fazer.
           </p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px;">
             <a href="#contato" class="btn btn-lime">Solicitar Proposta</a>
@@ -724,22 +709,22 @@
           <div class="pill">
             <div class="pill-icon">♟️</div>
             <div>
-              <div class="pill-title">Estratégia & Lógica</div>
-              <div class="pill-body">Avaliar riscos e criar estratégias com a mesma precisão dos melhores jogadores de poker do mundo — aplicada às decisões do seu negócio.</div>
+              <div class="pill-title">Tomada de decisão sob incerteza</div>
+              <div class="pill-body">Sua equipe aprende a avaliar cenários com informação incompleta e a agir mesmo assim.</div>
             </div>
           </div>
           <div class="pill">
             <div class="pill-icon">🧠</div>
             <div>
-              <div class="pill-title">Inteligência Emocional</div>
-              <div class="pill-body">Controle emocional e resiliência para que sua equipe atue com mais eficiência mesmo em momentos de alta pressão e incerteza.</div>
+              <div class="pill-title">Controle emocional sob pressão</div>
+              <div class="pill-body">Quem tem um processo de decisão sólido não precisa gerenciar emoção: ela simplesmente não entra no cálculo.</div>
             </div>
           </div>
           <div class="pill" style="border-color:rgba(184,230,0,0.2);background:rgba(184,230,0,0.04);">
             <div class="pill-icon">🤝</div>
             <div>
-              <div class="pill-title">Trabalho em Equipe</div>
-              <div class="pill-body">Colaboração e coesão de equipes através de dinâmicas práticas e envolventes que geram resultados reais e duradouros.</div>
+              <div class="pill-title">Leitura de pessoas e negociação</div>
+              <div class="pill-body">Entender o que o outro pensa, enxerga e sente, como fazemos nas mesas de poker.</div>
             </div>
           </div>
         </div>
@@ -754,7 +739,7 @@
         <div class="lbl-row" style="justify-content:center;"><span class="lbl">Serviços</span></div>
         <h2 class="h2" style="text-align:center;max-width:none;">SERVIÇOS <em>PERSONALIZADOS</em></h2>
         <p class="lead" style="max-width:none;text-align:center;margin:0 auto;">
-          Cada evento é adaptado para as dores e desafios da sua empresa — conteúdo e dinâmica moldados para o que sua equipe precisa.
+          Cada evento é adaptado para as dores e desafios da sua empresa, conteúdo e dinâmica moldados para o que sua equipe precisa.
         </p>
       </div>
     </div>
@@ -764,7 +749,7 @@
         <div class="svc-tag">Formato Presencial ou Online</div>
         <div class="svc-title">PALESTRAS</div>
         <div class="svc-body">
-          Abordamos temas como <strong style="color:#fff;font-weight:500;">estratégia, lógica</strong> e controle emocional. Utilizamos o poker como metáfora para decisões empresariais complexas, tornando o conteúdo prático e interativo.
+          Sua equipe não assiste: participa. Através de situações do poker, desenvolvemos habilidades reais de <strong style="color:#fff;font-weight:500;">decisão, controle emocional e leitura de pessoas</strong>, de forma interativa e com a participação de todos.
         </div>
       </div>
       <div class="svc-card" style="border-left:2px solid var(--primary);">
@@ -773,7 +758,7 @@
         <div class="svc-tag">Imersivo & Hands-On</div>
         <div class="svc-title">WORKSHOPS</div>
         <div class="svc-body">
-          Formato imersivo onde os participantes <strong style="color:#fff;font-weight:500;">aplicam o que aprendem diretamente no jogo</strong>, melhorando análise, comunicação e tomada de decisão em tempo real.
+          Dinâmicas baseadas no poker onde os participantes <strong style="color:#fff;font-weight:500;">jogam, decidem, erram e acertam</strong>, e entendem por que tomaram cada decisão. Formato mais longo que a palestra, com mais tempo para aprofundar cada habilidade.
         </div>
       </div>
       <div class="svc-card">
@@ -781,7 +766,7 @@
         <div class="svc-tag">Integração & Resultados</div>
         <div class="svc-title">TORNEIOS CORPORATIVOS</div>
         <div class="svc-body">
-          Além de divertidos, os torneios são uma <strong style="color:#fff;font-weight:500;">forma prática de aplicar os conceitos aprendidos</strong> nas palestras e workshops, promovendo integração e feedback em tempo real.
+          Organizamos um torneio de poker para a sua equipe. Enquanto as mãos são jogadas, <strong style="color:#fff;font-weight:500;">comentamos cada decisão em tempo real</strong>, ampliando a compreensão sobre risco, estratégia e comportamento. Formato completamente adaptável ao tamanho e tempo disponível da empresa.
         </div>
       </div>
     </div>
@@ -813,18 +798,18 @@
     <div class="method-grid reveal">
       <div class="method-cell">
         <div class="method-num">01</div>
-        <div class="method-title">Dinâmico & Envolvente</div>
-        <div class="method-body">Conteúdo moldado para as dores reais da sua empresa — sem fórmulas prontas, sem apresentações genéricas.</div>
+        <div class="method-title">Briefing</div>
+        <div class="method-body">Entendemos os objetivos da empresa, o perfil da equipe e o que se espera do evento. É a partir daí que definimos formato, duração e conteúdo.</div>
       </div>
       <div class="method-cell">
         <div class="method-num">02</div>
-        <div class="method-title">Ferramentas Interativas</div>
-        <div class="method-body">Insights gerados em tempo real e aplicados diretamente ao contexto corporativo dos participantes, no momento em que acontecem.</div>
+        <div class="method-title">Personalização</div>
+        <div class="method-body">Adaptamos a programação para o contexto específico da sua empresa, sem fórmula pronta, sem conteúdo genérico.</div>
       </div>
       <div class="method-cell">
         <div class="method-num">03</div>
-        <div class="method-title">Decisão Sob Pressão</div>
-        <div class="method-body">Os participantes vivenciam tomada de decisões reais sob pressão — aprimorando habilidades em cenários práticos e colaborativos.</div>
+        <div class="method-title">Execução</div>
+        <div class="method-body">Conduzimos o evento do início ao fim. Entregamos uma experiência de alto nível.</div>
       </div>
     </div>
   </section>
@@ -844,11 +829,11 @@
         <div class="team-name">CRISTIANO TOREZZAN</div>
         <div class="team-role">Co-fundador · Acadêmico</div>
         <ul class="team-bio-list">
-          <li>Professor na Faculdade de Ciências Aplicadas da UNICAMP.</li>
-          <li>Graduação em Matemática pela Universidade do Estado de Mato Grosso.</li>
+          <li>Graduado em Matemática pela Universidade do Estado de Mato Grosso.</li>
           <li>Doutorado e pós-doutorado em Matemática Aplicada pela UNICAMP.</li>
-          <li>Foco de pesquisa em teoria de códigos e pesquisa operacional.</li>
-          <li>Pioneiro no Brasil ao introduzir uma disciplina de poker na graduação da UNICAMP.</li>
+          <li>Professor da Faculdade de Ciências Aplicadas da UNICAMP.</li>
+          <li>Pesquisador em teoria de códigos e pesquisa operacional.</li>
+          <li>Pioneiro no Brasil ao criar a primeira disciplina de poker numa graduação universitária.</li>
         </ul>
       </div>
       <div class="team-card" style="border-left:2px solid var(--primary);">
@@ -858,10 +843,11 @@
         <div class="team-name">IVAN SANTANA</div>
         <div class="team-role">Co-fundador · Pro Player</div>
         <ul class="team-bio-list">
-          <li>Engenheiro de Computação formado pela UNICAMP, com mestrado em Pesquisa Operacional pela FCA-Unicamp.</li>
-          <li>Jogador profissional de poker desde 2005, passou dos limites mais baixos às mesas de High Stakes.</li>
-          <li>Autor de dois dos livros mais conceituados de poker do Brasil: "The Royal Book" e "Jogando como os Mestres do Poker".</li>
-          <li>Gerencia um time com mais de 40 jogadores, oferecendo treinamento para torná-los profissionais.</li>
+          <li>Engenheiro de Computação com mestrado em Pesquisa Operacional pela UNICAMP.</li>
+          <li>Jogador profissional de poker desde 2005.</li>
+          <li>Autor de "The Royal Book" e "Jogando como os Mestres do Poker", dois livros de referência do poker brasileiro.</li>
+          <li>Gestor de um time com mais de 40 jogadores profissionais.</li>
+          <li>Jogador de high stakes.</li>
         </ul>
       </div>
       <div class="team-card">
@@ -872,10 +858,10 @@
         <div class="team-role">Co-fundador · Treinador</div>
         <ul class="team-bio-list">
           <li>Formado em Direito pela USP.</li>
-          <li>Ex-jogador profissional de poker por 10 anos, migrou para a área educacional do poker.</li>
-          <li>Foi sócio do QG Akkari Team, aplicando mais de 50 cursos de poker ao lado de André Akkari.</li>
+          <li>Jogador profissional de poker por 10 anos.</li>
+          <li>Responsável técnico do QG Akkari Team, ao lado de André Akkari, mais de 50 cursos e formação de mais de 300 jogadores profissionais.</li>
           <li>Comentarista de poker na ESPN, BandSports e Grupo SuperPoker.</li>
-          <li>Palestrante e treinador de poker em empresas.</li>
+          <li>Palestrante e treinador corporativo.</li>
         </ul>
       </div>
     </div>
@@ -924,44 +910,43 @@
     </div>
   </section>
 
-  <!-- BENEFITS -->
+  <!-- QUEM NOS CONTRATA -->
   <section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="wrap section">
       <div class="benefits-split">
         <div>
-          <div class="lbl-row"><span class="lbl">Benefícios</span></div>
-          <h2 class="h2">O QUE SUA EMPRESA<br><em>VAI DESENVOLVER</em></h2>
+          <div class="lbl-row"><span class="lbl">Público</span></div>
+          <h2 class="h2">QUEM<br><em>NOS CONTRATA</em></h2>
           <div class="ben-list">
             <div class="ben-item reveal">
               <div class="ben-icon">🎯</div>
               <div>
-                <div class="ben-title">Desenvolver Habilidades Estratégicas</div>
-                <div class="ben-body">Avaliar riscos e tomar decisões em cenários de incerteza.</div>
+                <div class="ben-title">Equipes comerciais</div>
+                <div class="ben-body">Times que precisam tomar decisões rápidas, negociar melhor e ler o cliente com mais precisão.</div>
               </div>
             </div>
             <div class="ben-item reveal">
-              <div class="ben-icon">⚡</div>
+              <div class="ben-icon">🧠</div>
               <div>
-                <div class="ben-title">Melhorar a Tomada de Decisões Sob Pressão</div>
-                <div class="ben-body">Tomar decisões rápidas e informadas.</div>
+                <div class="ben-title">Liderança</div>
+                <div class="ben-body">Gestores que precisam pensar estrategicamente, gerenciar risco e decidir com informação incompleta.</div>
               </div>
             </div>
             <div class="ben-item reveal">
-              <div class="ben-icon">👁️</div>
+              <div class="ben-icon">🎉</div>
               <div>
-                <div class="ben-title">Ler e Interpretar Comportamentos</div>
-                <div class="ben-body">Aprimorar a comunicação e a negociação por meio da leitura de comportamento.</div>
+                <div class="ben-title">Eventos de fim de ano</div>
+                <div class="ben-body">Uma experiência diferente, que entretém e desenvolve ao mesmo tempo.</div>
               </div>
             </div>
             <div class="ben-item reveal">
-              <div class="ben-icon">🤝</div>
+              <div class="ben-icon">🃏</div>
               <div>
-                <div class="ben-title">Fortalecer o Trabalho em Equipe</div>
-                <div class="ben-body">Desenvolver espírito de colaboração e coesão entre os colaboradores.</div>
+                <div class="ben-title">Quem busca algo fora do comum</div>
+                <div class="ben-body">Empresas que querem uma experiência de desenvolvimento que vai além do formato tradicional.</div>
               </div>
             </div>
           </div>
-          <div class="benefits-callout">Transforme desafios em oportunidades e leve sua equipe ao próximo nível!</div>
         </div>
         <div class="benefits-photo reveal">
           <img src="Fotos%20-%20Palestra/Take-20.jpg" alt="Workshop participante">
@@ -970,54 +955,14 @@
     </div>
   </section>
 
-  <!-- WHY US -->
-  <section style="background:var(--bg);">
-    <div class="wrap section">
-      <div class="why-layout">
-        <div class="why-photo reveal">
-          <img src="Fotos%20-%20Palestra/Take-50.jpg" alt="Palestra" style="object-position:center 20%;">
-        </div>
-        <div>
-          <div class="lbl-row"><span class="lbl">Por que nós?</span></div>
-          <h2 class="h2">APRENDIZADO QUE<br><em>VEM DA PRÁTICA</em></h2>
-          <p class="lead">
-            Nossa metodologia foi construída em cima de décadas de experiência real — nas mesas de high stakes, na formação de centenas de jogadores profissionais de poker e em mais de 20 eventos corporativos. Nada de teoria por teoria.
-          </p>
-          <div class="why-stats">
-            <div class="why-stat">
-              <div class="why-stat-num">20+</div>
-              <div class="why-stat-lbl">Eventos realizados</div>
-            </div>
-            <div class="why-stat">
-              <div class="why-stat-num">1.200+</div>
-              <div class="why-stat-lbl">Colaboradores impactados</div>
-            </div>
-            <div class="why-stat wide">
-              <div class="why-stat-num">20 ANOS</div>
-              <div class="why-stat-lbl">de expertise em poker e negócios</div>
-            </div>
-          </div>
-          <div class="check-list">
-            <div class="check-item">Personalização das palestras para atender às necessidades específicas de cada empresa</div>
-            <div class="check-item">Experiência comprovada com mais de 20 eventos realizados, impactando mais de 1.200 colaboradores</div>
-            <div class="check-item">Equipe formada na UNICAMP e USP</div>
-            <div class="check-item">Metodologia construída na prática — mesas de high stakes e formação de jogadores profissionais</div>
-          </div>
-          <a href="#contato" class="btn btn-lime" style="margin-top:32px;">Solicitar Proposta</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- YELLOW CTA -->
   <div class="yellow-cta">
     <div class="yellow-cta-inner">
-      <div class="yellow-cta-pre">Pronto para o próximo nível?</div>
       <div class="yellow-cta-title">
-        TRANSFORME<br>SUA EQUIPE<br>AGORA
+        PRONTO PARA<br>JOGAR?
       </div>
       <p class="yellow-cta-sub">
-        Mais de 1.200 colaboradores já desenvolveram habilidades de alto nível com nossa metodologia. Sua empresa é a próxima.
+        Mais de 1.200 colaboradores já passaram pela experiência. Entre em contato e a gente entende juntos qual formato faz mais sentido para a sua empresa.
       </p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a href="https://wa.me/5511975301170?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20palestras%20e%20workshops%20do%20Poker%20Fora%20da%20Caixa." target="_blank" rel="noopener" class="btn-on-yellow">
@@ -1034,9 +979,9 @@
       <div class="contact-split">
         <div>
           <div class="lbl-row"><span class="lbl">Vamos Jogar?</span></div>
-          <h2 class="h2">PRONTO PARA LEVAR SUA EQUIPE AO <em>PRÓXIMO NÍVEL?</em></h2>
+          <h2 class="h2">PRONTO PARA <em>JOGAR?</em></h2>
           <p class="lead" style="margin-top:0;">
-            Entre em contato para discutir as necessidades da sua empresa. Vamos desenvolver uma experiência personalizada.
+            Mais de 1.200 colaboradores já passaram pela experiência. Entre em contato e a gente entende juntos qual formato faz mais sentido para a sua empresa.
           </p>
           <a href="https://wa.me/5511975301170?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20palestras%20e%20workshops%20do%20Poker%20Fora%20da%20Caixa." target="_blank" rel="noopener" class="btn btn-lime" style="margin-top:24px;">
             💬 Falar no WhatsApp
@@ -1079,7 +1024,6 @@
         <span class="foot-name">Poker Fora da Caixa</span>
       </a>
       <span class="foot-copy">© 2026 Poker Fora da Caixa. Todos os direitos reservados.</span>
-      <span class="foot-slogan">"Transforme suas decisões, jogue para ganhar!"</span>
     </div>
   </footer>
 

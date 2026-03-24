@@ -1,54 +1,137 @@
-# CLAUDE.md — Frontend Website Rules
+# CLAUDE.md — Poker Fora da Caixa Website
 
 ## Always Do First
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
+- **Read this file entirely** before starting any task — brand rules are non-negotiable.
+
+---
+
+## Project Context
+- **O que é:** Consultoria de palestras e treinamentos corporativos que aplica conceitos de poker (decisão sob incerteza, gestão de risco, leitura de pessoas, controle emocional) a executivos e times de liderança.
+- **Fundador:** Leonardo Bueno — palestrante, ex-parceiro QG Akkari Team.
+- **Público-alvo:** C-level, diretores, gestores, RH corporativo de empresas de médio e grande porte.
+- **Slogan oficial:** "Transforme suas decisões, jogue para ganhar!"
+- **Contato:** contato@pokerforadacaixa.com.br | (11) 9 7530-1170
+
+---
+
+## Brand Identity
+
+### Paleta de Cores — usar CSS variables abaixo, sem exceção
+```css
+:root {
+  --color-bg: #0F0F0F;
+  --color-surface: #1C1C1C;
+  --color-border: #2A2A2A;
+  --color-divider: #3A3A3A;
+  --color-primary: #B8E600;
+  --color-primary-dark: #8FB300;
+  --color-text: #FFFFFF;
+  --color-text-secondary: #B0B0B0;
+  --color-accent: #C8102E;
+  --color-navy: #1E2D3D;
+  --color-cream: #F0EDE8;
+  --font-primary: 'Poppins', sans-serif;
+}
+```
+
+### Tipografia
+- **Fonte única:** Poppins (Google Fonts) — Bold para títulos e CTAs, Medium para subtítulos e nav, Regular para corpo, Light para captions.
+- Tracking apertado (`-0.03em`) em headings grandes.
+- Line-height generoso (`1.7`) no corpo de texto.
+
+### Hierarquia de cores
+| Elemento | Cor | Peso |
+|---|---|---|
+| Títulos | #FFFFFF | Poppins Bold |
+| Corpo | #B0B0B0 | Poppins Regular |
+| Destaques / links | #B8E600 | Poppins Bold |
+| Botão primário | bg #B8E600, text #0F0F0F | — |
+| Botão hover | bg #8FB300, text #0F0F0F | — |
+
+### Espaçamento
+- Border radius: 8px (elementos pequenos) a 16px (cards)
+- Padding interno: 24px–40px
+- Gap entre seções: 48px–80px
+
+### Logo
+- Sempre sobre fundo escuro (#0F0F0F ou similar).
+- Área de respiro mínima: 20% do tamanho do logo.
+- Não distorcer, não adicionar sombras ou efeitos, não alterar cores internas.
+- Composição: símbolo + "POKER" (branco bold) + "FORA DA CAIXA" (verde limão #B8E600).
+- Tamanho mínimo do símbolo: 32px.
+- O logo foi atualizado — usar sempre o arquivo mais recente em `brand_assets/`.
+
+---
+
+## Tom & Voz
+- **Personalidade:** estratégica, desafiadora, profissional sofisticada, dinâmica, acessível.
+- **Tom em textos:** executivo e direto — sem ser engessado. Provoca reflexão, tira da zona de conforto.
+- **Nunca usar:** jargões óbvios de poker ("apostar no sucesso", "blefar no mercado"), linguagem genérica de IA ("mergulhar", "navegar", "robusto", "transformador", "ecossistema").
+- **Sempre usar:** exemplos concretos antes de conceitos abstratos. CTA claro ao final de cada seção.
+
+---
 
 ## Reference Images
-- If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
-- If no reference image: design from scratch with high craft (see guardrails below).
-- Screenshot your output, compare against reference, fix mismatches, re-screenshot. Do at least 2 comparison rounds. Stop only when no visible differences remain or user says so.
+- Se uma imagem de referência for fornecida: replicar layout, espaçamento, tipografia e cor exatamente. Trocar por placeholder content. Não melhorar nem adicionar ao design.
+- Se não houver referência: criar com alto nível de craft seguindo os guardrails abaixo.
+- Screenshot do output, comparar com referência, corrigir divergências, re-screenshot. Mínimo 2 rodadas. Parar só quando não houver diferenças visíveis ou o usuário indicar.
+
+---
 
 ## Local Server
-- **Always serve on localhost** — never screenshot a `file:///` URL.
-- Start the dev server: `node serve.mjs` (serves the project root at `http://localhost:3000`)
-- `serve.mjs` lives in the project root. Start it in the background before taking any screenshots.
-- If the server is already running, do not start a second instance.
+- **Sempre servir em localhost** — nunca screenshot de URL `file:///`.
+- Iniciar o servidor: `node serve.mjs` (serve o root do projeto em `http://localhost:3000`)
+- `serve.mjs` está na raiz do projeto. Iniciar em background antes de qualquer screenshot.
+- Se o servidor já estiver rodando, não iniciar uma segunda instância.
+
+---
 
 ## Screenshot Workflow
-- Puppeteer is installed at `C:/Users/nateh/AppData/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users/nateh/.cache/puppeteer/`.
-- **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
-- Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
-- Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
-- `screenshot.mjs` lives in the project root. Use it as-is.
-- After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
-- When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
-- Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
+- Puppeteer instalado em `C:/Users/nateh/AppData/Local/Temp/puppeteer-test/`. Chrome cache em `C:/Users/nateh/.cache/puppeteer/`.
+- **Sempre screenshot de localhost:** `node screenshot.mjs http://localhost:3000`
+- Screenshots salvos em `./temporary screenshots/screenshot-N.png` (auto-incrementado, nunca sobrescrito).
+- Sufixo opcional: `node screenshot.mjs http://localhost:3000 label` → salva como `screenshot-N-label.png`
+- `screenshot.mjs` está na raiz. Usar como está.
+- Após screenshot, ler o PNG de `temporary screenshots/` com a ferramenta Read — Claude consegue ver e analisar a imagem diretamente.
+- Na comparação, ser específico: "heading está em 32px mas referência mostra ~24px", "gap do card é 16px mas deveria ser 24px"
+- Verificar: espaçamento/padding, tamanho/peso/line-height da fonte, cores (hex exato), alinhamento, border-radius, sombras, tamanho de imagens.
+
+---
 
 ## Output Defaults
-- Single `index.html` file, all styles inline, unless user says otherwise
+- Arquivo único `index.html`, todos os estilos inline, exceto se o usuário pedir diferente.
 - Tailwind CSS via CDN: `<script src="https://cdn.tailwindcss.com"></script>`
-- Placeholder images: `https://placehold.co/WIDTHxHEIGHT`
-- Mobile-first responsive
+- Imagens placeholder: `https://placehold.co/WIDTHxHEIGHT`
+- Mobile-first responsivo.
+
+---
 
 ## Brand Assets
-- Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
-- If assets exist there, use them. Do not use placeholders where real assets are available.
-- If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
+- Verificar sempre a pasta `brand_assets/` antes de criar qualquer coisa. Pode conter logo, fotos e vídeos do site.
+- Se o logo estiver presente, usar. Se a paleta de cores estiver definida (está, acima), usar os valores exatos — não inventar cores.
+- Não usar placeholders onde assets reais estão disponíveis.
+
+---
 
 ## Anti-Generic Guardrails
-- **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.
-- **Shadows:** Never use flat `shadow-md`. Use layered, color-tinted shadows with low opacity.
-- **Typography:** Never use the same font for headings and body. Pair a display/serif with a clean sans. Apply tight tracking (`-0.03em`) on large headings, generous line-height (`1.7`) on body.
-- **Gradients:** Layer multiple radial gradients. Add grain/texture via SVG noise filter for depth.
-- **Animations:** Only animate `transform` and `opacity`. Never `transition-all`. Use spring-style easing.
-- **Interactive states:** Every clickable element needs hover, focus-visible, and active states. No exceptions.
-- **Images:** Add a gradient overlay (`bg-gradient-to-t from-black/60`) and a color treatment layer with `mix-blend-multiply`.
-- **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
-- **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
+- **Cores:** Nunca usar a paleta padrão do Tailwind (indigo-500, blue-600, etc.). Usar sempre as CSS variables da marca definidas acima.
+- **Sombras:** Nunca usar `shadow-md` flat. Usar sombras em camadas, com tint de cor e baixa opacidade.
+- **Tipografia:** Apenas Poppins — variar o peso conforme hierarquia definida acima.
+- **Gradientes:** Camadas de gradientes radiais. Adicionar grain/textura via SVG noise filter para profundidade.
+- **Animações:** Animar apenas `transform` e `opacity`. Nunca `transition-all`. Usar easing estilo spring.
+- **Estados interativos:** Todo elemento clicável precisa de estados hover, focus-visible e active. Sem exceções.
+- **Imagens:** Adicionar overlay de gradiente (`bg-gradient-to-t from-black/60`) e camada de tratamento de cor com `mix-blend-multiply`.
+- **Espaçamento:** Usar os tokens definidos acima — não usar steps aleatórios do Tailwind.
+- **Profundidade:** Superfícies devem ter sistema de camadas (base → elevated → floating), não todas no mesmo z-plane.
+
+---
 
 ## Hard Rules
-- Do not add sections, features, or content not in the reference
-- Do not "improve" a reference design — match it
-- Do not stop after one screenshot pass
-- Do not use `transition-all`
-- Do not use default Tailwind blue/indigo as primary color
+- Não adicionar seções, features ou conteúdo que não estejam na referência ou solicitados explicitamente.
+- Não "melhorar" um design de referência — replicar.
+- Não parar após uma rodada de screenshot.
+- Não usar `transition-all`.
+- Não usar azul/indigo padrão do Tailwind como cor primária.
+- Não distorcer o logo nem aplicar efeitos sobre ele.
+- Todo texto do site em PT-BR.
