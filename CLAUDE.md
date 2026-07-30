@@ -11,7 +11,7 @@
 - **Fundador:** Leonardo Bueno — palestrante, ex-parceiro QG Akkari Team.
 - **Público-alvo:** C-level, diretores, gestores, RH corporativo de empresas de médio e grande porte.
 - **Slogan oficial:** "Transforme suas decisões, jogue para ganhar!"
-- **Contato:** contato@pokerforadacaixa.com.br | (11) 9 7530-1170
+- **Contato:** contato@pokerforadacaixa.com.br | (11) 9 2513-6742
 
 ---
 
